@@ -1,0 +1,43 @@
+//Otras tablas
+
+
+
+Script de Tabla "reserva_turista":
+
+create table Reserva_turista(
+id_turista int NOT NULL,
+id_reserva int NOT NULL,
+FOREIGN KEY(id_reserva ) REFERENCES reserva (id_reserva )  on delete cascade on update cascade,
+FOREIGN KEY(id_turista ) REFERENCES turista( id_turista )  on delete cascade on update cascade
+)
+
+
+Script de Tabla "hospedaje_reserva":
+
+create table Hospedaje_reserva(
+ 	id_hospedaje int NOT NULL,
+ 	id_reserva int NOT NULL,
+  	FOREIGN KEY(id_hospedaje ) REFERENCES hospedaje (id_hospedaje )  on delete cascade on update cascade,
+ 	FOREIGN KEY(id_reserva ) REFERENCES reserva( id_reserva )  on delete cascade on update cascade
+ )
+
+
+//insert en Tabla turista
+
+
+INSERT INTO turista (idTurista, nombreTurista,nroCelular,direccion) VALUES ('1','Anllelo Josue','958958748','calle siempre Feliz anio');
+INSERT INTO turista (idTurista, nombreTurista,nroCelular,direccion) VALUES ('2','Alberto','958958668','calle siempre feliz navidad');
+
+//insert en tabla hospedaje
+
+INSERT INTO hospedaje (idHospedaje, nombre) VALUES ('1','La caseta');
+INSERT INTO hospedaje (idHospedaje, nombre) VALUES ('2','El complejo');
+
+//insert en tabla reserva
+
+INSERT INTO reserva (idReserva, costo) VALUES ('1',' 150');
+INSERT INTO reserva (idReserva, costo) VALUES ('2','75');
+
+
+
+
